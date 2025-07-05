@@ -1,0 +1,13 @@
+# Flask Configuration
+SECRET_KEY=your-super-secret-key-change-this-in-production
+JWT_SECRET_KEY=your-jwt-secret-key-change-this-in-production
+
+# MongoDB Configuration
+MONGO_URI=mongodb://localhost:27017/
+
+# For MongoDB Atlas (cloud), use format like:
+# MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/
+
+# Flask Environment
+FLASK_ENV=development
+FLASK_DEBUG=True 

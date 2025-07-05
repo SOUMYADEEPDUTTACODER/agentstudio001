@@ -1,0 +1,116 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 248 250 252; /* #F8FAFC */
+    --foreground: 26 27 58; /* #1A1B3A */
+
+    --card: 248 250 252; /* #F8FAFC */
+    --card-foreground: 26 27 58; /* #1A1B3A */
+
+    --popover: 248 250 252; /* #F8FAFC */
+    --popover-foreground: 26 27 58; /* #1A1B3A */
+
+    --primary: 26 27 58; /* #1A1B3A */
+    --primary-foreground: 248 250 252; /* #F8FAFC */
+
+    --secondary: 139 92 246; /* #8B5CF6 */
+    --secondary-foreground: 248 250 252; /* #F8FAFC */
+
+    --muted: 99 102 241; /* #6366F1 */
+    --muted-foreground: 248 250 252; /* #F8FAFC */
+
+    --accent: 139 92 246; /* #8B5CF6 */
+    --accent-foreground: 26 27 58; /* #1A1B3A */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 248 250 252; /* #F8FAFC */
+
+    --border: 99 102 241; /* #6366F1 */
+    --input: 139 92 246; /* #8B5CF6 */
+    --ring: 26 27 58; /* #1A1B3A */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 26 27 58; /* #1A1B3A */
+    --sidebar-foreground: 248 250 252; /* #F8FAFC */
+    --sidebar-primary: 139 92 246; /* #8B5CF6 */
+    --sidebar-primary-foreground: 26 27 58; /* #1A1B3A */
+    --sidebar-accent: 99 102 241; /* #6366F1 */
+    --sidebar-accent-foreground: 248 250 252; /* #F8FAFC */
+    --sidebar-border: 99 102 241; /* #6366F1 */
+    --sidebar-ring: 139 92 246; /* #8B5CF6 */
+  }
+
+  .dark {
+    --background: 26 27 58; /* #1A1B3A */
+    --foreground: 248 250 252; /* #F8FAFC */
+
+    --card: 26 27 58; /* #1A1B3A */
+    --card-foreground: 248 250 252; /* #F8FAFC */
+
+    --popover: 26 27 58; /* #1A1B3A */
+    --popover-foreground: 248 250 252; /* #F8FAFC */
+
+    --primary: 248 250 252; /* #F8FAFC */
+    --primary-foreground: 26 27 58; /* #1A1B3A */
+
+    --secondary: 99 102 241; /* #6366F1 */
+    --secondary-foreground: 248 250 252; /* #F8FAFC */
+
+    --muted: 99 102 241; /* #6366F1 */
+    --muted-foreground: 248 250 252; /* #F8FAFC */
+
+    --accent: 139 92 246; /* #8B5CF6 */
+    --accent-foreground: 26 27 58; /* #1A1B3A */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 248 250 252; /* #F8FAFC */
+
+    --border: 99 102 241; /* #6366F1 */
+    --input: 99 102 241; /* #6366F1 */
+    --ring: 139 92 246; /* #8B5CF6 */
+
+    --sidebar-background: 26 27 58; /* #1A1B3A */
+    --sidebar-foreground: 248 250 252; /* #F8FAFC */
+    --sidebar-primary: 139 92 246; /* #8B5CF6 */
+    --sidebar-primary-foreground: 26 27 58; /* #1A1B3A */
+    --sidebar-accent: 99 102 241; /* #6366F1 */
+    --sidebar-accent-foreground: 248 250 252; /* #F8FAFC */
+    --sidebar-border: 99 102 241; /* #6366F1 */
+    --sidebar-ring: 139 92 246; /* #8B5CF6 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-ai-dark text-ai-light font-sans;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #1A1B3A 0%, #6366F1 100%);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+  
+  .btn-primary {
+    @apply bg-ai-teal text-ai-light px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-ai-slate text-ai-light px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-200;
+  }
+}
