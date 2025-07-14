@@ -3,7 +3,7 @@
 export const config = {
   // API Configuration
   api: {
-    baseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api',
+    baseUrl: import.meta.env.VITE_API_BASE_URL || 'https://api.agentstudio.in',
   },
   
   // App Configuration
@@ -20,3 +20,5 @@ export const config = {
 } as const;
 
 export default config; 
+
+export const API_URL = "https://api.agentstudio.in"; 
