@@ -215,7 +215,7 @@ const Request = () => {
                   </div>
                   <div>
                     <p className="text-ai-light font-medium">Email</p>
-                    <p className="text-ai-slate text-sm">support@agenthub.ai</p>
+                    <p className="text-ai-slate text-sm">subhadip@agentstudio.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">

@@ -72,7 +72,7 @@ const Login = () => {
               <span className="text-ai-dark font-bold text-xl">AI</span>
             </div>
             <h2 className="text-3xl font-bold text-ai-dark">Welcome Back</h2>
-            <p className="text-ai-slate mt-2">Sign in to your AgentHub account</p>
+            <p className="text-ai-slate mt-2">Sign in to your AgentStudio account</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

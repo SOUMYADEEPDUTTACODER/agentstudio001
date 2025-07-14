@@ -95,7 +95,7 @@ const Signup = () => {
       
       toast({
         title: "Success",
-        description: "Account created successfully! Welcome to AgentHub.",
+        description: "Account created successfully! Welcome to AgentStudio.",
       });
       
       navigate('/');
@@ -131,7 +131,7 @@ const Signup = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-ai-teal to-ai-slate rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-ai-dark font-bold text-xl">AI</span>
             </div>
-            <h2 className="text-3xl font-bold text-ai-dark">Join AgentHub</h2>
+            <h2 className="text-3xl font-bold text-ai-dark">Join AgentStudio</h2>
             <p className="text-ai-slate mt-2">Create your account to get started</p>
           </div>
 
