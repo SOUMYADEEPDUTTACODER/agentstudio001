@@ -20,5 +20,4 @@ export const config = {
 } as const;
 
 export default config; 
-
-export const API_URL = "https://api.agentstudio.in"; 
+ 
