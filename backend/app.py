@@ -29,7 +29,7 @@ CORS(app, supports_credentials=True, resources={
 # MongoDB connection
 mongo_uri = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')
 client = MongoClient(mongo_uri)
-db = client['auth_db']
+db = client.get_default_database()  # Uses DB from URI, e.g., 'agentstudio'
 users_collection = db['users']
 agent_requests_collection = db['agent_requests']
 

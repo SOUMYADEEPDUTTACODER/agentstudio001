@@ -3,7 +3,7 @@ SECRET_KEY=your-super-secret-key-change-this-in-production
 JWT_SECRET_KEY=your-jwt-secret-key-change-this-in-production
 
 # MongoDB Configuration
-MONGO_URI=mongodb://localhost:27017/
+MONGO_URI=mongodb+srv://subhadipdas:root@subha.fuw7oej.mongodb.net/agentstudio
 
 # For MongoDB Atlas (cloud), use format like:
 # MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/
