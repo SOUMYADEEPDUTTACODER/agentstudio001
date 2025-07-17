@@ -92,7 +92,7 @@ With your new account, you can:
 - Request custom AI solutions
 - Stay updated with the latest in AI technology
 
-If you have any questions or need assistance, simply reply to this email or contact us at support@agentstudio.com.
+If you have any questions or need assistance, simply reply to this email or contact us at subhadip@agentstudio.in.
 
 Best wishes,
 The AgentStudio Team
