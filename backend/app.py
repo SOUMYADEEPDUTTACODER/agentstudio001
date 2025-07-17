@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 import os
 from dotenv import load_dotenv
 from bson import ObjectId
+from flask_mail import Mail, Message
 
 # Load environment variables
 load_dotenv()
@@ -16,6 +17,15 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'your-secret-key-change-this'
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY', 'jwt-secret-key-change-this')
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
 app.config['CORS_HEADERS'] = 'Content-Type'
+
+# Initialize Flask-Mail
+app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
+app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', 587))
+app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'True') == 'True'
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER')
+mail = Mail(app)
 
 # Initialize extensions
 bcrypt = Bcrypt(app)
@@ -64,6 +74,34 @@ def signup():
 
         result = users_collection.insert_one(user_doc)
         access_token = create_access_token(identity=str(result.inserted_id))
+
+        # Send welcome email
+        try:
+            msg = Message(
+                subject="Welcome to AgentStudio!",
+                recipients=[email],
+                body=f"""
+Hi {username},
+
+Welcome to AgentStudio! 🎉
+
+Thank you for signing up at AgentStudio. We're thrilled to have you join our community of innovators and AI enthusiasts.
+
+With your new account, you can:
+- Explore our gallery of AI agents
+- Request custom AI solutions
+- Stay updated with the latest in AI technology
+
+If you have any questions or need assistance, simply reply to this email or contact us at support@agentstudio.com.
+
+Best wishes,
+The AgentStudio Team
+https://agentstudio.in
+                """
+            )
+            mail.send(msg)
+        except Exception as mail_err:
+            print(f"[WARN] Could not send welcome email: {mail_err}")
 
         return jsonify({
             "message": "User created successfully",
@@ -183,6 +221,36 @@ def agent_request():
             "timestamp": datetime.utcnow()
         }
         result = agent_requests_collection.insert_one(request_doc)
+
+        # Send notification email to subhadip@agentstudio.com
+        try:
+            msg = Message(
+                subject="[AgentStudio] New Agent Request Submitted",
+                recipients=["subhadip@agentstudio.com"],
+                body=f"""
+Hello,
+
+A new agent request has been submitted on AgentStudio:
+
+Full Name: {full_name}
+Email: {email}
+Company: {company or 'N/A'}
+Agent Requested: {agent}
+Requirements:
+{requirements}
+
+Submitted at: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}
+
+You can view this request in the admin dashboard or reply directly to the user if needed.
+
+--
+AgentStudio Notification
+https://agentstudio.in
+                """
+            )
+            mail.send(msg)
+        except Exception as mail_err:
+            print(f"[WARN] Could not send agent request notification: {mail_err}")
 
         return jsonify({
             "message": "Agent request submitted successfully",
