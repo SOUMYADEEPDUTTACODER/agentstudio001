@@ -226,7 +226,7 @@ def agent_request():
         try:
             msg = Message(
                 subject="[AgentStudio] New Agent Request Submitted",
-                recipients=["subhadip@agentstudio.com"],
+                recipients=["subhadip@agentstudio.in"],
                 body=f"""
 Hello,
 
