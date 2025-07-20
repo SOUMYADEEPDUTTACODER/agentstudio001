@@ -152,7 +152,7 @@ const Signup = () => {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-teal focus:border-transparent bg-white text-ai-dark disabled:opacity-50 disabled:cursor-not-allowed ${
                     validationErrors.firstName ? 'border-red-500' : 'border-ai-slate/30'
                   }`}
-                  placeholder="John"
+                  placeholder="first"
                 />
                 {validationErrors.firstName && (
                   <p className="text-red-500 text-sm mt-1">{validationErrors.firstName}</p>
@@ -173,7 +173,7 @@ const Signup = () => {
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-teal focus:border-transparent bg-white text-ai-dark disabled:opacity-50 disabled:cursor-not-allowed ${
                     validationErrors.lastName ? 'border-red-500' : 'border-ai-slate/30'
                   }`}
-                  placeholder="Doe"
+                  placeholder="last"
                 />
                 {validationErrors.lastName && (
                   <p className="text-red-500 text-sm mt-1">{validationErrors.lastName}</p>
