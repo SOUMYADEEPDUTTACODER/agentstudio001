@@ -196,7 +196,7 @@ const Signup = () => {
                 className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-teal focus:border-transparent bg-white text-ai-dark disabled:opacity-50 disabled:cursor-not-allowed ${
                   validationErrors.email ? 'border-red-500' : 'border-ai-slate/30'
                 }`}
-                placeholder="john@example.com"
+                placeholder="name@example.com"
               />
               {validationErrors.email && (
                 <p className="text-red-500 text-sm mt-1">{validationErrors.email}</p>
