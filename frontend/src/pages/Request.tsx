@@ -110,7 +110,7 @@ const Request = () => {
                       value={formData.fullName}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-ai-slate/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-teal focus:border-transparent bg-white text-ai-dark"
-                      placeholder="John Doe"
+                      placeholder="First name Last name"
                     />
                   </div>
                   <div>
